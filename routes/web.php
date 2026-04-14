@@ -1,13 +1,24 @@
-<?php
-
+<?php 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MahasiswaController;
-use App\Http\Controllers\KrsController;
-use App\Http\Controllers\KhsController;
 
-// route utama ke dashboard
-Route::get('/', [MahasiswaController::class, 'index']);
+Route::get('/', function () {
+    return view('login'); // Buat file login.blade.php terpisah
+});
 
-Route::get('/dashboard', [MahasiswaController::class, 'index']);
-Route::get('/krs', [KrsController::class, 'index']);
-Route::get('/khs', [KhsController::class, 'index']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/krs', function () {
+    return view('krs');
+});
+Route::get('/khs', function () {
+    return view('khs');
+});
+
+Route::get('/profil', function () {
+    return view('profil');
+});
+Route::get('/jadwal', function () {
+    return view('jadwal');
+});
