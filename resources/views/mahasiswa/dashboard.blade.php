@@ -1,29 +1,33 @@
 @extends('layouts.app_auth')
 
-
-
 @section('content')
 
 <!-- HEADER -->
 <div class="text-center mb-6">
     <h1 class="text-2xl font-bold text-white">Dashboard Mahasiswa</h1>
-    <p class="text-white/60 text-sm">Selamat datang, {{ auth()->user()->name ?? 'Mahasiswa' }}</p>
+    <p class="text-white/60 text-sm">
+        Selamat datang, {{ auth()->user()->name ?? 'Mahasiswa' }}
+    </p>
 </div>
 
 <!-- CARD MENU -->
 <div class="grid grid-cols-1 gap-4">
 
-    <!-- Card 1 -->
-    <div class="bg-white/10 backdrop-blur border border-white/20 rounded-xl p-4 shadow-lg hover:scale-[1.02] transition">
-        <h2 class="text-white font-semibold">KRS</h2>
-        <p class="text-white/60 text-sm">Ambil dan kelola mata kuliah</p>
-    </div>
+    <!-- KRS -->
+    <a href="/krs">
+        <div class="bg-white/10 backdrop-blur border border-white/20 rounded-xl p-4 shadow-lg hover:scale-[1.02] transition">
+            <h2 class="text-white font-semibold">KRS</h2>
+            <p class="text-white/60 text-sm">Ambil dan kelola mata kuliah</p>
+        </div>
+    </a>
 
-    <!-- Card 2 -->
-    <div class="bg-white/10 backdrop-blur border border-white/20 rounded-xl p-4 shadow-lg hover:scale-[1.02] transition">
-        <h2 class="text-white font-semibold">KHS</h2>
-        <p class="text-white/60 text-sm">Lihat hasil studi (nilai)</p>
-    </div>
+    <!-- KHS -->
+    <a href="/khs">
+        <div class="bg-white/10 backdrop-blur border border-white/20 rounded-xl p-4 shadow-lg hover:scale-[1.02] transition">
+            <h2 class="text-white font-semibold">KHS</h2>
+            <p class="text-white/60 text-sm">Lihat hasil studi (nilai)</p>
+        </div>
+    </a>
 
 </div>
 

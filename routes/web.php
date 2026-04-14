@@ -1,49 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\KrsController;
+use App\Http\Controllers\KhsController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-*/
+// route utama ke dashboard
+Route::get('/', [MahasiswaController::class, 'index']);
 
-// halaman awal
-Route::get('/', function () {
-    return redirect('/login');
-});
-
-
-// =======================
-// AUTH (LOGIN)
-// =======================
-Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
-Route::get('/logout', [AuthController::class, 'logout']);
-
-
-// =======================
-// FORGOT PASSWORD
-// =======================
-Route::get('/forgot-password', [AuthController::class, 'showForgot']);
-Route::post('/forgot-password', [AuthController::class, 'forgotPassword']);
-
-Route::get('/reset-password/{email}', [AuthController::class, 'showReset']);
-Route::post('/reset-password', [AuthController::class, 'resetPassword']);
-
-
-// =======================
-// DASHBOARD (ROLE)
-// =======================
-Route::get('/admin', function () {
-    return view('admin.dashboard');
-});
-
-Route::get('/dosen', function () {
-    return view('dosen.dashboard');
-});
-
-Route::get('/mahasiswa', function () {
-    return view('mahasiswa.dashboard');
-});
+Route::get('/dashboard', [MahasiswaController::class, 'index']);
+Route::get('/krs', [KrsController::class, 'index']);
+Route::get('/khs', [KhsController::class, 'index']);
