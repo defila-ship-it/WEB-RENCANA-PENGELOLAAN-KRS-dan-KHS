@@ -1,5 +1,6 @@
 <?php 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 Route::get('/', function () {
     return view('login'); // Buat file login.blade.php terpisah
@@ -21,4 +22,10 @@ Route::get('/profil', function () {
 });
 Route::get('/jadwal', function () {
     return view('jadwal');
+});
+Route::get('/logout', function () {
+    // Menghapus semua data sesi
+    Session::flush();
+    // Mengembalikan user ke halaman login
+    return redirect('/');
 });

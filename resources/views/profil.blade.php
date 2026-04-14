@@ -7,7 +7,7 @@
             <i class="fas fa-user text-6xl text-gray-400"></i>
         </div>
         <h3 class="text-xl font-bold text-gray-800">Ema Merlisa</h3>
-        <p class="text-sm text-blue-600 font-semibold italic">2021010001</p>
+        <p class="text-sm text-blue-600 font-semibold italic">123456</p>
         
         <div class="mt-6 space-y-3 text-left border-t pt-6">
             <div class="flex justify-between text-sm">
